@@ -12,6 +12,6 @@ private1_subnet_cidr = "10.0.3.0/24"
 
 private2_subnet_cidr = "10.0.4.0/24"
 
-az1 = "eu-east-1a"
+az1 = "us-east-1a"
 
-az2 = "eu-east-1b"
+az2 = "us-east-1b"
