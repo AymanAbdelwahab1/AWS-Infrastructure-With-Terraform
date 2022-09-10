@@ -3,6 +3,6 @@ resource "aws_nat_gateway" "dev_nat" {
   subnet_id     = aws_subnet.public1.id
 
   tags = {
-    Name = "dev_nat"
+    Name = var.name
   }
 }
