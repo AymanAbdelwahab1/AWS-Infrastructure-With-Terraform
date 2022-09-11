@@ -1,2 +1,2 @@
 # AWS-Infrastructure-With-Terraform
-For creating and managing an infrastructure on AWS
+For deploying AWS 2-Tier Architecture with Terraform

@@ -33,7 +33,7 @@ resource "aws_subnet" "private1" {
 resource "aws_subnet" "private2" {
   vpc_id     = aws_vpc.dev_vpc.id
   cidr_block = var.private2_subnet_cidr
-    availability_zone = var.az2
+  availability_zone = var.az2
 
   tags = {
     Name = "private2"
