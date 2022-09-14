@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    
+    tools {
+        terraform 'terraform'
+    }
+    
+    stages{
+        
+        stage('Git Checkout'){
+            steps{
+                git branch: 'main', credentialsId: 'github-acc', url: 'https://github.com/AymanAbdelwahab1/AWS-Infrastructure-With-Terraform'
+            }
+        }
+        
+        stage('Terraform Init'){
+            steps{
+                withAWS(credentials: 'aws-acc') {
+                    sh 'terraform init'
+                }
+            }
+        }
+        
+        stage('Terraform Apply'){
+            steps{
+                withAWS(credentials: 'aws-acc') {
+                    sh 'terraform apply --var-file=dev.tfvars --auto-approve'
+                }
+                
+            }
+        }
+    }
+}
